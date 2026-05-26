@@ -1,4 +1,4 @@
-package com.example.xtsfailurelogger
+package com.example.xtsfailurelogger.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
