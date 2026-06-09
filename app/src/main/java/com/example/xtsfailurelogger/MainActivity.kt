@@ -33,30 +33,31 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         // Test: insert a dummy failure log and read it back
-        lifecycleScope.launch(Dispatchers.IO) {
-            val dao = database.failureLoggerDao()
-
-            //Insert the record
-            dao.insertLog(
-                FailureLogger(
-                    testSuites = TestSuites.CTS,
-                    testcase = "module test#testcase",
-                    failureMsg = " xzy error ",
-                    status = FailureStatus.IN_PROGRESS,
-                    note = "Need to work",
-                    android = "14"
-                )
-            )
-
-            //Read the data
-            val logs = database.failureLoggerDao().getAllLogs().first()
-            Log.d("CTSLogger", "Total logs in DB: ${logs.size}")
-            logs.forEach {
-                Log.d("CTSLogger", "Test: ${it.testcase} | Status: ${it.status}")
-            }
-        }
+//        lifecycleScope.launch(Dispatchers.IO) {
+//            val dao = database.failureLoggerDao()
+//
+//            //Insert the record
+//            dao.insertLog(
+//                FailureLogger(
+//                    testSuites = TestSuites.CTS,
+//                    testcase = "module test#testcase",
+//                    failureMsg = " xzy error ",
+//                    status = FailureStatus.IN_PROGRESS,
+//                    note = "Need to work",
+//                    android = "14"
+//                )
+//            )
+//
+//            //Read the data
+//            val logs = database.failureLoggerDao().getAllLogs().first()
+//            Log.d("CTSLogger", "Total logs in DB: ${logs.size}")
+//            logs.forEach {
+//                Log.d("CTSLogger", "Test: ${it.testcase} | Status: ${it.status}")
+//            }
+//        }
 
         setContent {
+            Text("Week 2 done — ViewModel ready")
             Text("DB test running — check Logcat")
         }
 
@@ -76,7 +77,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "Week 2 done — ViewModel ready",
         modifier = modifier
     )
 }
