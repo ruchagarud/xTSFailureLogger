@@ -17,6 +17,7 @@ import com.example.xtsfailurelogger.data.local.AppDatabase
 import com.example.xtsfailurelogger.data.model.FailureLogger
 import com.example.xtsfailurelogger.data.model.FailureStatus
 import com.example.xtsfailurelogger.data.model.TestSuites
+import com.example.xtsfailurelogger.ui.list.LogListScreen
 import com.example.xtsfailurelogger.ui.theme.XTSFailureLoggerTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -59,6 +60,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             Text("Week 2 done — ViewModel ready")
             Text("DB test running — check Logcat")
+
+            XTSFailureLoggerTheme {
+                LogListScreen(
+                    onAddClick = { },     // Week 4 — navigation
+                    onItemClick = { }     // Week 4 — navigation
+                )
+            }
         }
 
 //        setContent {
